@@ -423,6 +423,7 @@ textarea{resize:vertical;min-height:90px;line-height:1.6;}
 </div>
 
 <script type="module">
+// make globals explicit - already using window.
 // ============================================================
 // FIREBASE CONFIG
 // ============================================================
@@ -859,8 +860,8 @@ Return ONLY valid JSON, no text before or after:
 Responder rank: ${rank}
 Patient (anonymous): Age ${age||'unknown'}, ${gender||'unknown gender'}, Consciousness: ${avpu||'not specified'}
 BP: ${bp||'N/A'}, Pulse: ${pulse||'N/A'}, SpO2: ${spo2||'N/A'}, RR: ${rr||'N/A'}${etco2?', ETCO2: '+etco2:''}${temp?', Temp: '+temp:''}
-Treatment: ${treatment}${equip?'
-Equipment/meds: '+equip:''}
+Treatment: ${treatment}
+Equipment/meds: ${equip||'none'}
 Reflection: ${reflection||'None provided'}`;
 
   document.getElementById('form-section').style.display = 'none';
